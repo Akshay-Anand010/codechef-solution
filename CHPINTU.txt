@@ -1,0 +1,20 @@
+from collections import defaultdict
+T=int(input())
+for i in range(T):
+    l=[]
+    M,N=[int(x) for x in input().split()]
+    F=list(input().strip().split())
+    P=list(input().strip().split())
+    d1 = defaultdict(list)
+    for i in set(F):
+        key = i
+        for j in range(M):
+          if(F[j]==key):
+              d1[key].append(P[j])  
+    for i in set(F):
+        sum=0
+        for k in d1[i]:
+            sum=sum+int(k)
+        l.append(sum)        
+    l.sort()
+    print(l[0])

@@ -1,0 +1,16 @@
+from itertools import permutations
+s=input()
+N=int(input())
+per=permutations(s)
+for i in range(N):
+    w=input()
+    l=[]
+    c=0
+    for i in list(per):
+        s1=" "
+        if(w==s1.join(i).replace(" ", "").strip()):
+            c=c+1
+    if(c>=1):
+        print("Yes")
+    else:
+        print("No")
